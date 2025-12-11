@@ -1,159 +1,195 @@
-/* VARIABLES DE COULEUR */
+/* --- VARIABLES & RESET --- */
 :root {
-  --primary-color: #007bff; /* Bleu Fram */
-  --secondary-color: #28a745; /* Vert C.G.O.S */
-  --background-light: #f7f9fc;
-  --card-bg: #ffffff;
-  --warning-bg: #fffbe5;
-  --warning-border: #ffeb3b;
-  --error-color: #dc3545;
+  --fram-blue: #005eb8; /* A closer match to the blue in the PDF headers */
   --text-dark: #333;
+  --border-grey: #ccc;
+  --bg-light: #f9f9f9;
+  --table-stripe: #f0f6ff;
+  --highlight-red: #d9534f;
 }
 
-/* GENERAL */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 30px 10px;
-  background-color: var(--background-light);
+  padding: 20px;
+  background-color: var(--bg-light);
   color: var(--text-dark);
 }
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: var(--card-bg);
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
   padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* HEADER & LOGOS */
-.header {
+/* --- HEADER & LOGOS --- */
+.pdf-header {
   text-align: center;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #eee;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--fram-blue);
+  padding-bottom: 20px;
 }
-.logos {
+
+.logos-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  padding: 0 20px;
 }
-.logo-placeholder {
-  width: 120px;
-  height: 40px;
-  background-color: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  margin: 0 15px;
-  font-size: 0.8em;
-  color: #999;
-  font-weight: bold;
+
+.logo {
+  max-height: 50px;
+  width: auto;
 }
-.header h1 {
+
+.header-titles h1 {
+  color: var(--fram-blue);
   font-size: 1.8em;
-  color: var(--primary-color);
-  font-weight: 700;
-  margin: 0;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
 }
-.header h2 {
+
+.header-titles h2 {
+  color: var(--fram-blue);
+  font-size: 1.4em;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.header-titles h3 {
   font-size: 1em;
-  color: #777;
-  margin: 5px 0 0;
+  margin: 0;
+  font-weight: 500;
+  color: #555;
 }
 
-/* FORM INPUTS (GRID) */
-.input-group-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 15px;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-label {
-  font-weight: 700;
-  display: block;
-  margin-bottom: 5px;
-  color: var(--text-dark);
-  font-size: 0.95em;
-}
-select {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  background-color: #fff;
-  transition: border-color 0.3s;
-}
-select:focus {
-  border-color: var(--primary-color);
-  outline: none;
+/* --- FORM SELECTION --- */
+.selection-section {
+  margin-bottom: 30px;
 }
 
-/* RESULTS SECTION */
-#results {
-  margin-top: 30px;
-}
-.recap-title {
-  font-size: 1.2em;
-  color: var(--secondary-color);
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-.results-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.results-table th, .results-table td {
-  border: 1px solid #e0e0e0;
-  padding: 12px;
-  text-align: left;
-  font-size: 0.9em;
-}
-.results-table th {
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: 400;
-}
-.results-table tr:nth-child(even) {
-  background-color: #f0f6ff;
-}
-.highlight {
-  font-weight: 700;
-  color: var(--error-color);
+.section-title {
+  color: var(--fram-blue);
+  border-bottom: 1px solid var(--border-grey);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
   font-size: 1.1em;
 }
 
-/* NOTES & INFO */
-.info, .note {
-  font-size: 0.85em;
-  padding: 8px 12px;
-  border-radius: 6px;
-  margin-top: 10px;
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
 }
-.info {
-  background-color: #e9f7e9;
-  border: 1px solid var(--secondary-color);
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 0.9em;
 }
-.note {
-  background-color: var(--warning-bg);
-  border: 1px solid var(--warning-border);
-  color: #995500;
+
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-grey);
+  border-radius: 4px;
+  background: #fff;
 }
-.calculation-detail {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f0fff0;
-    border: 1px solid #d4edda;
-    border-radius: 6px;
-    font-size: 0.9em;
+
+/* --- RESULTS TABLE --- */
+.results-section {
+  margin-bottom: 30px;
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 20px;
+}
+
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+
+.pdf-table th,
+.pdf-table td {
+  border: 1px solid var(--border-grey);
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.pdf-table thead th {
+  background-color: var(--fram-blue);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.pdf-table tbody tr:nth-child(even) {
+  background-color: var(--table-stripe);
+}
+
+.pdf-table tbody tr:hover {
+  background-color: #e6f0ff;
+}
+
+.row-title {
+  text-align: left !important;
+  font-weight: 500;
+}
+
+.price-cell {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.final-price {
+  color: var(--highlight-red);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.total-row {
+  background-color: #f9f9f9 !important;
+  font-weight: 700;
+  border-top: 2px solid var(--border-grey);
+}
+
+.total-row .row-title {
+  text-align: right !important;
+  font-size: 1.1em;
+}
+
+/* --- FOOTER --- */
+.pdf-footer {
+  font-size: 0.8em;
+  color: #666;
+  border-top: 1px solid var(--border-grey);
+  padding-top: 15px;
+}
+
+.pdf-footer p {
+  margin: 5px 0;
+}
+
+/* --- NOTIFICATIONS --- */
+.notification {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-size: 0.9em;
 }
