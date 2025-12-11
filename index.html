@@ -4,107 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulateur C.G.O.S FRAMISSIMA - Monténégro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  
-  <div class="header">
-    <div class="logos">
-      <img src="logo_cgos.png" alt="Logo C.G.O.S" class="logo-placeholder" style="background: none; border: none;">
-      <img src="logo_fram.png" alt="Logo FRAMISSIMA" class="logo-placeholder" style="background: none; border: none;">
+
+<div class="main-container">
+  <header class="pdf-header">
+    <div class="logos-container">
+      <img src="logo_fram.png" alt="FRAM" class="logo">
+      <img src="logo_cgos.png" alt="C.G.O.S" class="logo">
+      <img src="logo_promovacances.png" alt="Promovacances" class="logo">
+      <img src="logo_karavel.png" alt="Karavel" class="logo">
     </div>
-    <h1>Simulateur de Prix Séjour C.G.O.S</h1>
-    <h2>FRAMISSIMA BIJELA PARK - Monténégro (8J/7N Tout Inclus)</h2>
-  </div>
-
-  <h3 class="recap-title">1. Choix du Séjour & Quotient</h3>
-  <div class="input-group-grid">
-    <div>
-      <label for="departureDate">Date de départ</label>
-      <select id="departureDate" onchange="updateSimulation()">
-        <option value="">-- Sélectionnez une date --</option>
-        <option value="2026-05-05">05/05/2026</option>
-        <option value="2026-05-12">12/05/2026</option>
-        <option value="2026-05-19">19/05/2026</option>
-        <option value="2026-05-26">26/05/2026</option>
-        <option value="2026-06-02">02/06/2026</option>
-        <option value="2026-06-09">09/06/2026</option>
-        <option value="2026-06-16">16/06/2026</option>
-        <option value="2026-06-23">23/06/2026</option>
-        <option value="2026-06-30">30/06/2026</option>
-        <option value="2026-07-07">07/07/2026</option>
-        <option value="2026-07-14">14/07/2026</option>
-        <option value="2026-07-21">21/07/2026</option>
-        <option value="2026-07-28">28/07/2026</option>
-        <option value="2026-08-04">04/08/2026</option>
-        <option value="2026-08-11">11/08/2026</option>
-        <option value="2026-08-18">18/08/2026</option>
-        <option value="2026-08-25">25/08/2026</option>
-        <option value="2026-09-01">01/09/2026</option>
-        <option value="2026-09-08">08/09/2026</option>
-        <option value="2026-09-15">15/09/2026</option>
-        <option value="2026-09-22">22/09/2026</option>
-        <option value="2026-09-29">29/09/2026</option>
-        <option value="2026-10-06">06/10/2026</option>
-        <option value="2026-10-13">13/10/2026</option>
-      </select>
+    <div class="header-titles">
+      <h1>FRAMISSIMA BIJELA PARK - MONTÉNÉGRO</h1>
+      <h2>TARIF SÉJOUR</h2>
+      <h3>PRIX PAR PERSONNE - SÉJOUR TOUT COMPRIS/INCLUS 8 JOURS/7 NUITS</h3>
     </div>
+  </header>
 
-    <div>
-      <label for="quotient">Votre Quotient Familial</label>
-      <select id="quotient" onchange="updateSimulation()">
-        <option value="">-- Sélectionnez votre quotient familial --</option>
-        <option value="Q1">Inférieur ou égal à 1010</option>
-        <option value="Q2">Compris entre 1010,01 et 1496</option>
-        <option value="Q3">Supérieur à 1496 ou non connu</option>
-      </select>
+  <section class="selection-section">
+    <h4 class="section-title">VOTRE SÉLECTION</h4>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="departureDate">Date de départ</label>
+        <select id="departureDate" onchange="updateSimulation()">
+          <option value="">-- Choisir une date --</option>
+          <option value="2026-05-05">05/05/2026</option>
+          <option value="2026-05-12">12/05/2026</option>
+          <option value="2026-05-19">19/05/2026</option>
+          <option value="2026-05-26">26/05/2026</option>
+          <option value="2026-06-02">02/06/2026</option>
+          <option value="2026-06-09">09/06/2026</option>
+          <option value="2026-06-16">16/06/2026</option>
+          <option value="2026-06-23">23/06/2026</option>
+          <option value="2026-06-30">30/06/2026</option>
+          <option value="2026-07-07">07/07/2026</option>
+          <option value="2026-07-14">14/07/2026</option>
+          <option value="2026-07-21">21/07/2026</option>
+          <option value="2026-07-28">28/07/2026</option>
+          <option value="2026-08-04">04/08/2026</option>
+          <option value="2026-08-11">11/08/2026</option>
+          <option value="2026-08-18">18/08/2026</option>
+          <option value="2026-08-25">25/08/2026</option>
+          <option value="2026-09-01">01/09/2026</option>
+          <option value="2026-09-08">08/09/2026</option>
+          <option value="2026-09-15">15/09/2026</option>
+          <option value="2026-09-22">22/09/2026</option>
+          <option value="2026-09-29">29/09/2026</option>
+          <option value="2026-10-06">06/10/2026</option>
+          <option value="2026-10-13">13/10/2026</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="quotient">Quotient Familial</label>
+        <select id="quotient" onchange="updateSimulation()">
+          <option value="">-- Choisir votre QF --</option>
+          <option value="Q1">QF ≤ 1010</option>
+          <option value="Q2">1010 < QF ≤ 1496</option>
+          <option value="Q3">QF > 1496 ou inconnu</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nbAdults">Adultes (12 ans+)</label>
+        <select id="nbAdults" onchange="updateSimulation()">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nbChild1">1er Enfant (2-11 ans)</label>
+        <select id="nbChild1" onchange="updateSimulation()">
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nbChild2">2ème Enfant (2-11 ans)</label>
+        <select id="nbChild2" onchange="updateSimulation()">
+          <option value="0">0</option>
+          <option value="1">1</option>
+        </select>
+      </div>
     </div>
-  </div>
-  
-  <h3 class="recap-title">2. Composition de la Chambre</h3>
-  <div class="input-group-grid">
-    <div>
-      <label for="nbAdults">Nombre d’adultes (12 ans et +)</label>
-      <select id="nbAdults" onchange="updateSimulation()">
-        <option value="1">1 adulte</option>
-        <option value="2" selected>2 adultes</option>
-      </select>
+  </section>
+
+  <section id="simulation-results" class="results-section">
+    <h4 class="section-title">RÉSULTATS DE LA SIMULATION</h4>
+    <div id="results-content">
+      <p class="placeholder-text">Veuillez compléter votre sélection pour voir les tarifs.</p>
     </div>
+  </section>
 
-    <div>
-      <label for="nbChild1">1er enfant (2 à -12 ans)</label>
-      <select id="nbChild1" onchange="updateSimulation()">
-        <option value="0">Aucun</option>
-        <option value="1">1 enfant</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="nbChild2">2ème enfant (2 à -12 ans)</label>
-      <select id="nbChild2" onchange="updateSimulation()">
-        <option value="0">Aucun</option>
-        <option value="1">1 enfant</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="singleRoomNote" class="note">
-    <span style="font-weight: bold;">Cas 1 Adulte + 0 Enfant :</span> Le tarif **chambre individuelle** est appliqué.
-  </div>
-  <div id="minAdultsNote" class="note" style="display: none;">
-    <span style="font-weight: bold;">Cas 1 Adulte + Enfants :</span> Le **1er enfant** est facturé au tarif adulte pour atteindre la base double (2 payants). Seul le **2ème enfant** bénéficie du tarif réduit enfant du barème.
-  </div>
-
-  <h3 class="recap-title">3. Résultat de la Simulation</h3>
-  <div id="results">
-    <p style="text-align: center;">Veuillez sélectionner vos options ci-dessus pour afficher la simulation de prix.</p>
-  </div>
-
-  <p style="font-size: 0.8em; margin-top: 20px;">
-    * Simulation indicative basée sur les grilles C.G.O.S 2026. Les montants définitifs sont confirmés au moment de la réservation.
-  </p>
+  <footer class="pdf-footer">
+    <p>* Le tarif enfant n'est applicable que s'il partage la chambre de 2 adultes payants. Dans le cas contraire, des règles spécifiques s'appliquent.</p>
+    <p>Simulation indicative. Prix définitifs confirmés à la réservation.</p>
+  </footer>
 </div>
 
 <script src="script.js"></script>
